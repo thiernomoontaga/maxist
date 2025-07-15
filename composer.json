@@ -1,0 +1,22 @@
+{
+    "name": "remediation/maxit",
+    "autoload": {
+        "psr-4": {
+            "Remediation\\Maxit\\": "src/",
+            "App\\Entity\\":"src/entity/",
+            "App\\Service\\":"src/service/",
+            "App\\Repository\\":"src/repository/",
+            "App\\Controller\\":"src/controller/",
+            "App\\Core\\":"app/core/",
+            "APP\\Core\\Abstract\\":"app/core/abstract/"
+        }
+    },
+    "authors": [
+        {
+            "name": "thierno"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
