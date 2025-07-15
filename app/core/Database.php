@@ -10,11 +10,14 @@ class Database {
   }
   public static function getInstance(){
     if(self::$pdo === null){
-      self::$pdo = new PDO(
-        
-      );
-    }
+      self::$pdo = new PDO(ADRESSE,USER,PASSWORD,
+      [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+      ]
+    );
   }
-
+   return self::$pdo;
+  }
 }
 

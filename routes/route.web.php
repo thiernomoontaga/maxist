@@ -1,4 +1,5 @@
 <?php
+use App\Controller\ClientController;
 use App\Controller\SecurityController;
  $route =  [
   '/'=>[
@@ -9,6 +10,10 @@ use App\Controller\SecurityController;
   '/deconnexion'=>[
     'controller'=>SecurityController::class,
     'action'=>'deconnexion'
+  ],
+  '/dashbord'=>[
+    'controller'=>ClientController::class,
+    'action'=>'accueil'
   ],
   '/login'=>[
     'controller'=>SecurityController::class,

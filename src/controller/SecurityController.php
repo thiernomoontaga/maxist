@@ -17,12 +17,13 @@ class SecurityController extends AbstractController{
   public function create(){
 
   }
-  public function login(string $login , string $password){
+  public function login(){
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
       $login = $_POST['login'];
       $password = $_POST['password'];
       if($login = '1234' && $password = 'passer'){
-        echo 'Bonjour tout le monde ';
+        header('location:/dashbord');
+        exit;
       }
     }
   }
