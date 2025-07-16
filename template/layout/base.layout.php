@@ -12,7 +12,7 @@
   <div class="layout h-screen w-[100%] flex ">
     <div class="flex w-[16%]  bg-[#FF7900] flex-col">
       <div class="h-[200px] w-[200px]  bg-[] rounded-3xl mt-10 ml-10 flex objectif-cover ">
-          <img src="./images/maxit.png" alt="" class=" m-auto rounded-3xl">
+          <img src="/assets/images/maxit.png" alt="" class=" m-auto rounded-3xl">
       </div>
       <div class="w-[95%] h-[90%] m-auto mt-10">
         <div class="flex flex- mt-10  ml-10">
@@ -35,14 +35,14 @@
       </div>
 
     </div>
-    <div class="flex w-[84%] ">
+    <div class="flex w-[84%] flex-col">
       <div class=" h-[70px] w-[100%] flex mt-5">
           <div class="w-[60%] h-15  ml-6 rounded-4xl  bg-[#F6F0F0] mt-2">
               <i class="fa-solid fa-magnifying-glass-dollar absolute mt-4 text-2xl ml-6"></i>
               <input type="text" name="" id="" class="p-4 h-[100%] ml-20  border rounded-4xl w-[100%] bg-[#F6F0F0] outline-none border-none" placeholder="recherche">
           </div>
           <div class="h-[70px] w-[70px] bg-[#F6F0F0]  rounded-[100%] ml-35 mb-2">
-              <img src="./images/DSC08071.jpg" alt="" class=" w-[100%] h-[100%] rounded-[100%] objectif-cover">
+              <img src="/assets/images/DSC08071.jpg" alt="" class=" w-[100%] h-[100%] rounded-[100%] objectif-cover">
           </div>
           <div class="h-[50px] w-[150px]  rounded-4xl ml-20 mt-3 bg-[#FF7900] flex justity-center items-center">
               <p class="text-center text-[#fff] font-bold text-xl ml-10">Client</p>
@@ -50,7 +50,12 @@
           <div class="h-[70px] w-[70px] ml-6">
             <i class="fa-solid fa-bell text-4xl ml-10 mt-5"></i>
           </div>
+        
+      </div>
+      <div class="h-full w-full">
+          <?php echo $content ;?>
       </div>  
+      
 
     </div>
 

@@ -16,7 +16,7 @@ return array(
     'App\\Service\\' => array($baseDir . '/src/service'),
     'App\\Repository\\' => array($baseDir . '/src/repository'),
     'App\\Entity\\' => array($baseDir . '/src/entity'),
+    'App\\Core\\Abstract\\' => array($baseDir . '/app/core/abstract'),
     'App\\Core\\' => array($baseDir . '/app/core'),
     'App\\Controller\\' => array($baseDir . '/src/controller'),
-    'APP\\Core\\Abstract\\' => array($baseDir . '/app/core/abstract'),
 );

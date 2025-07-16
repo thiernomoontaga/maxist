@@ -13,7 +13,7 @@ use App\Controller\SecurityController;
   ],
   '/dashbord'=>[
     'controller'=>ClientController::class,
-    'action'=>'accueil'
+    'action'=>'index'
   ],
   '/login'=>[
     'controller'=>SecurityController::class,

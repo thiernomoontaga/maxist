@@ -8,7 +8,7 @@
             "App\\Repository\\":"src/repository/",
             "App\\Controller\\":"src/controller/",
             "App\\Core\\":"app/core/",
-            "APP\\Core\\Abstract\\":"app/core/abstract/"
+            "App\\Core\\Abstract\\":"app/core/abstract/"
         }
     },
     "authors": [

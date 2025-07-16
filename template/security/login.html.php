@@ -7,7 +7,7 @@
       </div>
       <div class=" h-[250px] w-[80%] ml-27 mt-10 ">
         <form action="/login" method ="POST" class=" h-[90%] w-[90%] m-auto flex flex-col ">
-          <div>
+        <div>
               <label for="" class="text-2xl">Login</label>
               <input type="text" class="p-5 h-[10px] w-[800px] bg-[#E8F0F5] rounded-xl mt-4 outline-none" placeholder="Entrer votre numero de telephone" name="login">
           </div>

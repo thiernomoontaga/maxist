@@ -1,4 +1,4 @@
-<?
+<?php
 namespace App\Core\Abstract;
 
 abstract class AbstractEntity {
