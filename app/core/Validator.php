@@ -56,30 +56,30 @@ class Validator
                 finfo_close($finfo);
                 return in_array($mime, explode(',', $types));
             },
-            'file_size' => fn($value, $param) => is_array($value) && isset($value['size']) && $value['size'] <= (int)$param,
-            'senegal_phone' => fn($value) => preg_match('/^(77|78|76|70|75)[0-9]{7}$/', $value),
-            'senegal_nin' => fn($value) => preg_match('/^[12][0-9]{12}$/', $value),
-            'unique' => function ($value, $repositoryClass) {
-                return !self::exists($value, $repositoryClass);
-            },
+            // 'file_size' => fn($value, $param) => is_array($value) && isset($value['size']) && $value['size'] <= (int)$param,
+            // 'senegal_phone' => fn($value) => preg_match('/^(77|78|76|70|75)[0-9]{7}$/', $value),
+            // 'senegal_nin' => fn($value) => preg_match('/^[12][0-9]{12}$/', $value),
+            // 'unique' => function ($value, $repositoryClass) {
+            //     return !self::exists($value, $repositoryClass);
+            // },
         ];
     }
 
-    private static function exists($value, $repositoryClass): bool
-    {
-        $namespace = 'App\\Repository\\';
-        $repositoryClass = $namespace . $repositoryClass;
-        if (!class_exists($repositoryClass)) {
-            error_log("Repository class $repositoryClass does not exist.");
-            return false;
-        }
-        $repository = App::getDependency($repositoryClass);
-        if (!method_exists($repository, 'exists')) {
-            error_log("Method 'exists' not found in repository class $repositoryClass.");
-            return false;
-        }
-        return $repository->exists($value);
-    }
+    // private static function exists($value, $repositoryClass): bool
+    // {
+    //     $namespace = 'App\\Repository\\';
+    //     $repositoryClass = $namespace . $repositoryClass;
+    //     if (!class_exists($repositoryClass)) {
+    //         error_log("Repository class $repositoryClass does not exist.");
+    //         return false;
+    //     }
+    //     $repository = App::getDependency($repositoryClass);
+    //     if (!method_exists($repository, 'exists')) {
+    //         error_log("Method 'exists' not found in repository class $repositoryClass.");
+    //         return false;
+    //     }
+    //     return $repository->exists($value);
+    // }
 
     public static function validate(array $data, array $rules): void
     {
@@ -91,10 +91,8 @@ class Validator
         self::$data = $data;
 
         foreach ($rules as $field => $fieldRules) {
-            // Pour les fichiers, aller chercher dans $_FILES si besoin
             $value = $data[$field] ?? ($_FILES[$field] ?? null);
 
-            // Skip other rules if field is empty and not required
             if (empty($value)) {
                 if (in_array('required', $fieldRules)) {
                     self::addError($field, sprintf(self::$validationMessages['required'], $field));
@@ -169,3 +167,5 @@ class Validator
         self::$validationMessages[$ruleName] = $message;
     }
 }
+
+

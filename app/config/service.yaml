@@ -1,0 +1,10 @@
+core:
+    Database: App\Core\Database
+    Session:  App\Core\Session
+repository: 
+    PersonneRepository:  App\Repository\PersonneRepository
+    CompteRepository:    App\Repository\CompteRepository
+service: 
+    SecurityService: App\Service\SecurityService
+
+

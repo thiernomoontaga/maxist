@@ -27,10 +27,10 @@
           <i class="fa-solid fa-file-invoice-dollar text-3xl text-[#fff]"></i>
           <p class="text-2xl text-[#fff] ml-6 mt-1">Comptes</p>
         </div>
-        <div class="flex flex- mt-70  ml-10">
+        <form class="flex flex- mt-70  ml-10" action="/logout" method="POST">
           <i class="fa-solid fa-right-from-bracket text-3xl text-[#fff]"></i>
-          <p class="text-2xl text-[#fff] ml-6 mt-1">Deconnexion</p>
-        </div>
+          <button type="submit" class="text-2xl text-[#fff] ml-6 mt-1 cursor-pointer">Deconnexion</button>
+        </form>
 
       </div>
 

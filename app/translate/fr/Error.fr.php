@@ -1,5 +1,4 @@
 <?php
-
 enum FrErrorMessages:string {
 
 case REQUIRED = 'Le champ %s est requis';
@@ -19,10 +18,8 @@ case FILE_MIME = 'Le fichier %s doit être de type JPG ou PNG.';
 case FILE_SIZE = 'Le fichier %s ne doit pas dépasser 2MB.';
 case UNIQUE_PHONE = "Ce numero existe déjà.";
 case UNIQUE = 'Le %s existe déja.';
-
 case LOGIN_ERROR = 'Login et/ou mot de passe incorrect !';
 case VERIFY_EMAIL_ERROR = 'Cette adresse email n\'existe pas.';
-
 case FORM_INVALID = 'Formulaire Invalide !';
 case VALIDATION_FAILED = 'Erreur de validation';
 case EMAIL_EXISTS = 'Cet email est déjà utilisé';
@@ -33,5 +30,5 @@ case USER_NOT_FOUND = 'Utilisateur non trouvé';
 case INVALID_EMAIL = 'Email invalide';
 case FIELD_REQUIRED = 'Ce champ est requis';
 case PASSWORD_TOO_WEAK = 'Le mot de passe doit contenir au moins 8 caractères, une majuscule; une minuscule et un chiffre';
-
 }
+

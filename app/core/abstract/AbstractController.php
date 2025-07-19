@@ -1,12 +1,14 @@
 <?php
 namespace App\Core\Abstract;
+
+use App\Core\App;
 use App\Core\Session;
 abstract class AbstractController{
   protected $layout = 'base';
   protected ?Session $session ;
   public function __construct()
   {
-    $this->session = Session::getInstance();
+    $this->session = App::getDependency('Session');
   }
   abstract public function index();
   abstract public function store();

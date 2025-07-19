@@ -7,13 +7,14 @@ use App\Controller\SecurityController;
     'action'=>'index'
   ], 
 
-  '/deconnexion'=>[
+  '/logout'=>[
     'controller'=>SecurityController::class,
-    'action'=>'deconnexion'
+    'action'=>'logout'
   ],
   '/dashbord'=>[
     'controller'=>ClientController::class,
-    'action'=>'index'
+    'action'=>'index',
+    'middlewares'=>['auth']
   ],
   '/login'=>[
     'controller'=>SecurityController::class,

@@ -1,8 +1,8 @@
 <?php 
 namespace App\Service;
 
+use App\Core\App ;
 use App\Entity\Utilisateur;
-use Soap\Sdl;
 use App\Repository\PersonneRepository;
 
 class SecurityService {
@@ -11,7 +11,7 @@ class SecurityService {
   
   public  function __construct()
   {
-    $this->personneRepository = PersonneRepository::getInstance();
+    $this->personneRepository = App::getDependency('PersonneRepository');
   }
   public static function getInstance (){
     if(self::$securityService === null){
