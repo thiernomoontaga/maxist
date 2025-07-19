@@ -5,6 +5,7 @@ namespace App\Migration;
 use App\Core\App;
 use Exception;
 use PDO;
+use PDOException;
 
 class Migration{
   private PDO $pdo ;
@@ -20,14 +21,29 @@ class Migration{
     echo "connexio reussie ! ";
   }
   private function createDatabase(){
-    if($this->driver === 'mysql'){
-      $this->pdo->exec("CREATE DATABASE IF NOT EXITS".$_ENV['DB_NAME']);
-      $this->pdo->exec("USE".$_ENV['DB_NAME']);
+    if($this->driver=== "mysql"){
+        $this->pdo->exec("CREATE DATABASE IF NOT EXISTS " . DB_NAME);
+        $this->pdo->exec("USE " . DB_NAME);
+    }elseif($this->driver=== "pgsql"){
+         try {
+                $pdo= new PDO("pgsql:host=127.0.0.1;port=5432;dbname=postgres", DB_USER_POSTGRES,DB_PASS_POSTGRES,[
+                        PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION
+                ]);
+                $stmt = $pdo->prepare("SELECT 1 FROM pg_database WHERE datname = :dbname");
+                $stmt->execute([':dbname' => DB_NAME]);
+
+                if ($stmt->fetch()) {
+                    echo "La base de données '" . DB_NAME . "' existe déjà.\n";
+                } else {
+                    $pdo->exec('CREATE DATABASE "' . DB_NAME . '"');
+                    echo "Base de données '" . DB_NAME . "' créée avec succès.\n";
+                }
+                
+         } catch (PDOException $e) {
+            throw $e;
+         }   
     }
-    elseif($this->driver === 'pgsql'){
-      
-    }
-  }
+}
   private function createTables(){
     $sql = match($this->driver){
       'mysql' => file_get_contents(__DIR__.'/../database/script_createMysql.sql'),

@@ -35,3 +35,4 @@ CREATE TABLE transaction(
   idCompte INT,
   FOREIGN KEY (idCompte) REFERENCES compte(id)
 );
+

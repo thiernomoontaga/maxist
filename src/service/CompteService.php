@@ -18,6 +18,5 @@ class CompteService{
     }
     return self::$compte;
   }
-  // cette fonction doit recuperer les comptes depuis le repository
   
 }
