@@ -20,7 +20,6 @@ class CompteRepository extends AbstractRepository{
       }
       return self::$compteRepository;
     }
-   
     public function findCompteByUser(Utilisateur $user){
       $query = 'select * from '.$this->table.'where idutilisateur = :idutilisateur';
       $stmt = $this->pdo->prepare($query);

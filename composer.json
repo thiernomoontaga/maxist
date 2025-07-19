@@ -9,7 +9,9 @@
             "App\\Controller\\":"src/controller/",
             "App\\Core\\":"app/core/",
             "App\\Core\\Abstract\\":"app/core/abstract/",
-            "App\\Core\\Middlewares\\":"app/core/middlewares/"
+            "App\\Core\\Middlewares\\":"app/core/middlewares/",
+            "App\\Migration\\":"migrations/",
+            "App\\Seeder\\":"seeders"
 
         }
     },
@@ -18,8 +20,13 @@
             "name": "thierno"
         }
     ],
+    "scripts": {
+        "database:migrate":"@php bin/migrate",
+        "database:seeder":"@php bin/seeder"
+    },
     "require": {
         "vlucas/phpdotenv": "^5.6",
         "symfony/yaml": "^7.3"
     }
 }
+

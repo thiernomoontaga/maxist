@@ -16,22 +16,22 @@
 
 </div>
 <div class="flex w-[95%] h-[120px]  ml-3 gap-2">
-    <div class="h-[60px] w-[350px] border rounded-4xl mt-6 ml-10 text-xl flex justity-center items-center flex-row ">
+    <a class="h-[60px] w-[350px] border rounded-4xl mt-6 ml-10 text-xl flex justity-center items-center flex-row cursor-pointer" href="/transactions">
       <p class="ml-6">Consulter mes Transactions</p>
       <i class="fa-solid fa-comments-dollar ml-3 text-[#FF7900]"></i>
-    </div>
-    <div class="h-[60px] w-[350px] border rounded-4xl mt-6 ml-5 text-xl flex justity-center items-center flex-row ">
+    </a>
+    <a class="h-[60px] w-[350px] border rounded-4xl mt-6 ml-5 text-xl flex justity-center items-center flex-row cursor-pointer" href="/comptesecondaire">
       <p class="ml-6">Creer un compte secondaire</p>
       <i class="fa-solid fa-user ml-3 text-[#FF7900]"></i>
-    </div>
-    <div class="h-[60px] w-[300px] border rounded-4xl mt-6 ml-5 text-xl flex justity-center items-center flex-row ">
+   </a>
+    <a class="h-[60px] w-[300px] border rounded-4xl mt-6 ml-5 text-xl flex justity-center items-center flex-row cursor-pointer" href="/changerCompte">
       <p class="ml-6">changer de compte</p>
       <i class="fa-solid fa-rotate-right ml-10 text-[#FF7900]"></i>
-    </div>
-    <div class="h-[60px] w-[350px] border rounded-4xl mt-6 ml-5 text-xl flex justity-center items-center flex-row ">
+    </a>
+    <a class="h-[60px] w-[350px] border rounded-4xl mt-6 ml-5 text-xl flex justity-center items-center flex-row cursor-pointer" href="/consulterSolde">
       <p class="ml-6">Consulter solde compte</p>
       <i class="fa-solid fa-comments-dollar ml-10 text-[#FF7900]"></i>
-    </div>
+    </a>
    </div>
    <div class="h-15 w-4 text-3xl ml-60 font-bold">
     historique
